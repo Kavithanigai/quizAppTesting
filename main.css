@@ -1,0 +1,87 @@
+body {
+  background-image: url("http://www.macleans.ca/wp-content/uploads/2016/11/white-house.jpg");
+
+  /* Background image is centered vertically and horizontally at all times */
+  background-position: center center;
+
+  /* Background image doesn't tile */
+  background-repeat: no-repeat;
+
+  /* Background image is fixed in the viewport so that it doesn't move when
+     the content's height is greater than the image's height */
+  background-attachment: fixed;
+
+  /* background image rescale based on the container's size */
+  background-size: cover;
+
+  /* Set a background color that will be displayed
+     while the background image is loading */
+  /*background-color: #464646;*/
+  font-family: "Roboto", helvetica, sans-serif;
+  padding: 60px 0 0;
+
+}
+
+.question-selection{
+  width: 100%;
+}
+
+header{
+  margin-bottom: 40px;
+}
+
+h1{
+  display: block;
+  text-align: center;
+  color:solid blue;
+  height: 30px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 10px;
+  margin-bottom: 30px;
+}
+
+#questions-wrapper {
+  width: 400px;
+  padding: 40px;
+  border-radius: 3px;
+  background: white;
+  margin: 0 auto;
+  /*margin-bottom: 20px;*/
+}
+
+ #start, #submitAnswer{
+   width: 400px;
+  margin-bottom: 25px;
+  margin-top: 10px;
+  width: 100%;
+  height: auto;
+  padding: 15px;
+  font-size: 20px;
+  background-color: #a2def1;
+  border-radius: 3px;
+}
+
+#questions-wrapper>button{
+  text-align:  center;
+  font-size: 20px;
+  border: 0;
+}
+
+#continue1, #continue2{
+  color: white;
+  background-color: #79c879;
+  border-radius: 3px;
+}
+
+#again{
+  background-color: #a2def1;
+  border-radius: 3px;
+}
+
+
+img{
+   display: block;
+  text-align: center;
+  padding-bottom: 20px;
+}
