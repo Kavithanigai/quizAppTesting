@@ -38,7 +38,9 @@ function generateQuestion(quesIndex){
    console.log("score=" + score);
    console.log("current question index="+ currentQuestionIndex);
    console.log("generateQuestion ran");
-    return `<form id="quizQuestionAndAnswers">
+    return `<form action="#" id="quizQuestionAndAnswers" aria-label="quiz form" role="presentation">
+            <fieldset name="quizQAndA">
+             <legend>President's Quiz</legend>
             <div class='row'>
             <div class="col-12">
             <div class='question-selection'>
@@ -48,31 +50,32 @@ function generateQuestion(quesIndex){
             </div>
 
            <div class="col-12">
-           <div class="possibleAnswers">
+           <div class="possibleAnswers" role="radiogroup">
             <input type="radio" id="ans1" name="answers" value="${ansToDisplay1}">
-             <label for="possible-Answers1">${ansToDisplay1}</label><br/>
+             <label for="ans1">${ansToDisplay1}</label><br/>
             </div>
 
             <div class="col-12">
              <input type="radio" id="ans2" name="answers" value="${ansToDisplay2}">
-             <label for="possible-Answer2">${ansToDisplay2}</label><br/>
+             <label for="ans2">${ansToDisplay2}</label><br/>
             </div>
 
 
             <div class="col-12">
              <input type="radio" id="ans3" name="answers" value="${ansToDisplay3}">
-             <label for="possible-Answer3">${ansToDisplay3}</label><br/>
+             <label for="ans3">${ansToDisplay3}</label><br/>
             </div>
 
             <div class="col-12">
              <input type="radio" id="ans4" name="answers" value="${ansToDisplay4}">
-             <label for="possible-Answer4">${ansToDisplay4}</label><br/>
+             <label for="ans4">${ansToDisplay4}</label><br/>
             </div>
            </div>
+         </fieldset>
 
            <div class='row'>
            <div class="col-12">
-            <button id="submitAnswer" type="submit">Submit</button>
+            <button aria-label="submitAnswer" id="submitAnswer" type="submit">Submit</button>
             <label for="scoreDisplay"><h5>Score: (${score}/10) </h5></label>
            </div>
            </div>
@@ -113,7 +116,7 @@ function giveFeedback(){
     {
       console.log(ansSelected);
       console.log("Great job! You got the correct answer.");
-      $('#questions-wrapper').html(`<h2>Correct Answer </h2><img src="https://static8.depositphotos.com/1007989/858/i/950/depositphotos_8587097-stock-photo-okay-smiley.jpg" alt="Yay! Right Answer" width=25% height=25%></img><button id="continue1" name="continue" type="submit">Continue</button>`);
+      $('#questions-wrapper').html(`<h2>Correct Answer </h2><img src="https://static8.depositphotos.com/1007989/858/i/950/depositphotos_8587097-stock-photo-okay-smiley.jpg" alt="Yay! Right Answer" width=25% height=25%></img><button aria-label="continue" id="continue1" name="continue" type="submit">Continue</button>`);
       score +=1;
       console.log("score = " + score+"/10");
 
@@ -123,14 +126,14 @@ function giveFeedback(){
       console.log("Sorry choose an answer");
 
 
-    $('#questions-wrapper').html(`<h2>Sorry, choose an Answer.</h2><img src="http://www.pictish-brewing.co.uk/wp-content/uploads/2016/01/thinking1.jpg" alt="Choose an answer" width=25% height=25%></img><button id ="continue2" name="goback" type="submit">GoBack</button>`);
+    $('#questions-wrapper').html(`<h2>Sorry, choose an Answer.</h2><img src="http://www.pictish-brewing.co.uk/wp-content/uploads/2016/01/thinking1.jpg" alt="Choose an answer" width=25% height=25%></img><button aria-label="goback" id ="continue2" name="goback" type="submit">GoBack</button>`);
 
     }
     //User selected wrong answer
     else{
       console.log("Sorry the right answer is: "+correctAnswer);
 
-    $('#questions-wrapper').html(`<h2>Sorry, wrong Answer.</h2><h3> Correct Answer: ${correctAnswer} </h3><img src="https://i.pinimg.com/736x/ee/17/e1/ee17e16c7a166cd5c1b221c07ff84ebf--symbols-emoticons-smiley-faces.jpg" alt="Sorry wrong answer" width=25% height=25%></img><button id="continue1" name="continue" type="submit">Continue</button>`);
+    $('#questions-wrapper').html(`<h2>Sorry, wrong Answer.</h2><h3> Correct Answer: ${correctAnswer} </h3><img src="https://i.pinimg.com/736x/ee/17/e1/ee17e16c7a166cd5c1b221c07ff84ebf--symbols-emoticons-smiley-faces.jpg" alt="Sorry wrong answer" width=25% height=25%></img><button aria-label="continue" id="continue1" name="continue" type="submit">Continue</button>`);
 
     }
   });
@@ -175,7 +178,7 @@ function setupContinueButton(){
   //final page of quiz App
   function endQuizForm(){
      console.log("endQuizForm ran");
-    $('#questions-wrapper').html(`<h4>Great Job! Your score is ${score}/10. </h4><p>Please click Start over to try the quiz again.</p><button id="again" type="submit">Start Over</button>`);
+    $('#questions-wrapper').html(`<h4>Great Job! Your score is ${score}/10. </h4><p>Please click Start over to try the quiz again.</p><button aria-label="Try again" id="again" type="submit">Start Over</button>`);
 
     //restart Quiz
     $('#again').on('click', function(event){
